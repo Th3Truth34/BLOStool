@@ -4,9 +4,9 @@ import pandas as pd
 from src.physics import LinkBudget
 from src.visualization import plot_earth_slice
 
-st.set_page_config(page_title="UAS Link Budget Calculator", layout="wide")
+st.set_page_config(page_title="Verdi UAS Link Budget Calculator", layout="wide")
 
-st.title("🛰️ UAS Link Budget Calculator (0-150km)")
+st.title("🛰️ Verdi UAS Link Budget Calculator (0-150km)")
 st.markdown("""
 **"Napkin Math to Flight Ready"**: Accurate LoS and BRLoS modeling with Earth curvature and diffraction.
 """)
