@@ -27,7 +27,7 @@ rx_nf_db = st.sidebar.number_input("RX Noise Figure (dB)", value=4.0, step=0.1)
 
 # Geometry
 st.sidebar.subheader("Geometry")
-dist_km = st.sidebar.slider("Link Distance (km)", 0.1, 150.0, 10.0, step=0.1)
+dist_km = st.sidebar.slider("Link Distance (km)", 0.1, 150.0, 100.0, step=0.1)
 gcs_h = st.sidebar.number_input("GCS Height (m AGL)", value=10.0, step=1.0)
 drone_h = st.sidebar.number_input("Drone Height (m AGL)", value=100.0, step=10.0)
 
