@@ -88,12 +88,15 @@ col3.metric("Throughput (Est)", f"{results['throughput_mbps']:.1f} Mbps", f"{res
 col4.metric("Path Loss (Total)", f"{results['total_loss']:.1f} dB", help=f"FSPL: {results['fspl']:.1f} dB, Diffraction: {results['diffraction_loss']:.1f} dB")
 
 # Warning Banners
-if not results['is_los']:
+d_horizon = results['d_horizon_km']
+if dist_km > d_horizon:
+    st.error(f"⚠️ **Beyond Radio Horizon** (horizon: {d_horizon:.1f} km). Smooth-earth diffraction loss: {results['diffraction_loss']:.1f} dB")
+elif not results['is_los']:
     st.error(f"⚠️ **Obstructed Line of Sight!** Diffraction Loss: {results['diffraction_loss']:.1f} dB")
-elif results['is_los'] and results['min_clearance'] < results['f1_at_obstruction'] * 0.6:
-     st.warning("⚠️ **Fresnel Zone Encroachment.** Clearance < 60% F1.")
+elif results['min_clearance'] < results['f1_at_obstruction'] * 0.6:
+     st.warning(f"⚠️ **Fresnel Zone Encroachment.** Clearance < 60% F1. Radio horizon: {d_horizon:.1f} km")
 else:
-    st.success("✅ **Clear Line of Sight**")
+    st.success(f"✅ **Clear Line of Sight** (Radio horizon: {d_horizon:.1f} km)")
 
 # Visualization
 st.subheader("Earth Slice Visualization")
