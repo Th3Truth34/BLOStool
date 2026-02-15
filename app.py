@@ -16,14 +16,14 @@ st.sidebar.header("System Configuration")
 
 # RF Parameters
 st.sidebar.subheader("RF Parameters")
-freq = st.sidebar.number_input("Frequency (MHz)", value=2400.0, step=100.0)
-bw = st.sidebar.number_input("Bandwidth (MHz)", value=10.0, step=1.0)
-tx_p_dbm = st.sidebar.number_input("TX Power (dBm)", value=30.0, step=1.0)
+freq = st.sidebar.number_input("Frequency (MHz)", value=414.0, step=1.0)
+bw = st.sidebar.number_input("Bandwidth (MHz)", value=5.0, step=0.5)
+tx_p_dbm = st.sidebar.number_input("TX Power (dBm)", value=50.0, step=0.5)
 tx_g_dbi = st.sidebar.number_input("TX Antenna Gain (dBi)", value=5.0, step=0.5)
 tx_l_db = st.sidebar.number_input("TX Cable Loss (dB)", value=1.0, step=0.1)
-rx_g_dbi = st.sidebar.number_input("RX Antenna Gain (dBi)", value=5.0, step=0.5)
+rx_g_dbi = st.sidebar.number_input("RX Antenna Gain (dBi)", value=1.5, step=0.1)
 rx_l_db = st.sidebar.number_input("RX Cable Loss (dB)", value=1.0, step=0.1)
-rx_nf_db = st.sidebar.number_input("RX Noise Figure (dB)", value=4.0, step=0.5)
+rx_nf_db = st.sidebar.number_input("RX Noise Figure (dB)", value=4.0, step=0.1)
 
 # Geometry
 st.sidebar.subheader("Geometry")
