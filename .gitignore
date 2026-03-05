@@ -1,3 +1,10 @@
 .venv/
 __pycache__/
 *.pyc
+
+# CRM
+crm/backend/*.db
+crm/backend/data/
+crm/frontend/node_modules/
+crm/frontend/dist/
+.env
