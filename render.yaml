@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: multifamily-leads-crm
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./data/crm.db
+    disk:
+      name: crm-data
+      mountPath: /app/data
+      sizeGB: 1
